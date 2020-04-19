@@ -1,11 +1,12 @@
 import React,{FC} from 'react';
+import GitUser from './GitUser/GitUser';
 interface AppProp{
 
 }
 const App: FC<AppProp> = ({}) => {
   return (
     <div className="App">
-      Search: <input type="text" />
+      <GitUser />
     </div>
   );
 }
