@@ -6,7 +6,7 @@ cache:
   - node_modules
 script:
   - npm test
-  - npm run test:coverage
+  - npm run test:coveralls
   - npm run build
 
 deploy:
