@@ -9,7 +9,7 @@ const UserDetail: FC<UserDetailProp> = ({user}) => {
     <div className="UserDetail__Container">
         <div>Git User Name : {login}</div>
         <div>Home Page : {url}</div>
-        <div>Image : <img src={avatar_url} style={{width: 16,height: 16}}/></div>
+        <div>Image : <img src={avatar_url} style={{width: 16,height: 16}} alt={'User Profile'}/></div>
         <hr/>
     </div>
   );

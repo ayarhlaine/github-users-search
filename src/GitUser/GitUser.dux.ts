@@ -1,4 +1,4 @@
-import { action,createReducer, createAction } from 'typesafe-actions';
+import { action,createReducer } from 'typesafe-actions';
 import { Dispatch } from 'redux';
 
 export const updateSearchTextAction = (searchText: string) => action('GIT_USER/CHANGE_SEARCH_TEXT', searchText);
