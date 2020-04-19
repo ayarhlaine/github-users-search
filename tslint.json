@@ -1,0 +1,22 @@
+{
+    "extends": "tslint:recommended",
+    "rules": {
+      "max-classes-per-file": [
+        true,
+        2
+      ],
+      "no-default-export": false,
+      "restrict-plus-operands": true,
+      "strict-boolean-expressions": false,
+      "quotemark": [
+        true,
+        "single",
+        "jsx-single"
+      ],
+      "import-spacing": false,
+      "interface-name": false,
+      "object-literal-sort-keys": false,
+      "ordered-imports":false
+    }
+  }
+  

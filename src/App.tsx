@@ -1,9 +1,11 @@
-import React from 'react';
+import React,{FC} from 'react';
+interface AppProp{
 
-function App() {
+}
+const App: FC<AppProp> = ({}) => {
   return (
     <div className="App">
-     
+      Search: <input type="text" />
     </div>
   );
 }
