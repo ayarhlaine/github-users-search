@@ -12,6 +12,8 @@ State Management :
 Testing :
 - enzyme 
 - enzyme-adapter-react-16
+- @types/enzyme
+- @types/enzyme-adapter-react-16
 
 ## Installing Dependancies
 Install via yarn
