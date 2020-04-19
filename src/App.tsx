@@ -3,7 +3,7 @@ import GitUser from './GitUser/GitUser';
 interface AppProp{
 
 }
-const App: FC<AppProp> = ({}) => {
+export const App: FC<AppProp> = ({}) => {
   return (
     <div className="App">
       <GitUser />
