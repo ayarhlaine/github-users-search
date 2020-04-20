@@ -1,7 +1,7 @@
 import React,{FC} from 'react';
 import {connect} from 'react-redux';
-import { updateSearchTextService } from './GitUserService';
 import { bindActionCreators, Dispatch } from 'redux';
+import { updateSearchTextService } from './GitUserService';
 import SearchInput from './SearchInput/SearchInput';
 import UserResultList from './UserResultList/UserResultList';
 import { GitUsers } from './GitUser.dux';
@@ -13,7 +13,7 @@ interface GitUserProp{
     }
 }
 type GitUserPropNULL = GitUserProp | null;
-const GitUser: FC<GitUserPropNULL> = ({searchText,users,actions}) => {
+export const GitUser: FC<GitUserPropNULL> = ({searchText,users,actions}) => {
   return (
     <div className="Git__User__Container">
       <SearchInput 
