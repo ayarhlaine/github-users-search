@@ -3,8 +3,8 @@ import {GitUsers} from '../GitUser.dux';
 interface UserDetailProp{
    user: GitUsers
 }
-const UserDetail: FC<UserDetailProp> = ({user}) => {
-  const {login,avatar_url,url} = user;
+export const UserDetail: FC<UserDetailProp> = ({user}) => {
+  const { login,avatar_url,url } = user;
   return (
     <div className="UserDetail__Container">
         <div>Git User Name : {login}</div>
