@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {GitUsers} from './GitUser.dux';
+import { GitUsers } from './GitUser.dux';
 interface GitHubResponse {
     total_count: number,
     items: Array<GitUsers>
