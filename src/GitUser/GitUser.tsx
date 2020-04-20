@@ -1,6 +1,6 @@
 import React,{FC} from 'react';
 import {connect} from 'react-redux';
-import { updateSearchTextService } from './GitUserSerice';
+import { updateSearchTextService } from './GitUserService';
 import { bindActionCreators, Dispatch } from 'redux';
 import SearchInput from './SearchInput/SearchInput';
 import UserResultList from './UserResultList/UserResultList';
