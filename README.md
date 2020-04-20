@@ -7,6 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 [![Build Status](https://travis-ci.com/devayarhlaine/github-users-search.svg?branch=master)](https://travis-ci.com/devayarhlaine/github-users-search)
 [![Coverage Status](https://coveralls.io/repos/github/devayarhlaine/github-users-search/badge.svg)](https://coveralls.io/github/devayarhlaine/github-users-search)
 
+
 ## Demo Link
 https://devayarhlaine.github.io/github-users-search/
 
@@ -47,7 +48,7 @@ Getting API Data :
 ## CI/CD
 [Travis CI](https://travis-ci.com/)
 
-We use Travis CI (Continuous Integration/Continuous Deployment) to deploy our site automatically to github pages.
+I use Travis CI (Continuous Integration/Continuous Deployment) to deploy our site automatically to github pages.
 
 ## Current To Do List
 - Complete unit test coverage up to 90 %
@@ -56,7 +57,7 @@ We use Travis CI (Continuous Integration/Continuous Deployment) to deploy our si
 - Better documentation with languages : English,Myanmar
 
 ## Contribution
-We will make safe master brand.
+I will make safe master brand.
 ### Pull Request
 - Fork the repo and create your branch from master. A guide on how to fork a repository: https://help.github.com/articles/fork-a-repo/
 
