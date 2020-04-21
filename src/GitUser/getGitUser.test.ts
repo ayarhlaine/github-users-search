@@ -20,4 +20,10 @@ describe('getGitUser',() =>{
         expect(subject).toEqual(git_users);
     });
 
+    it('should return empty git users when no response',async () => {
+        mockedAxios.get.mockResolvedValue({});
+        const subject = await getGitUsers(searchText);
+        expect(subject).toEqual([]);
+    });
+
 });
