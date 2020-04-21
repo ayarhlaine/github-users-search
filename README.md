@@ -50,10 +50,10 @@ Getting API Data :
 I use Travis CI (Continuous Integration/Continuous Deployment) to deploy our site automatically to github pages.
 
 ## Current To Do List
-- Complete unit test coverage up to 90 %
-- Call github search api only when user complete typing ( Prefer to use rxjs debouncetime )
-- Enhancement on UI/UX
-- Better documentation with languages : English,Myanmar
+- [x] Complete unit test coverage up to 90 %
+- [ ] Call github search api only when user complete typing ( Prefer to use rxjs debouncetime )
+- [ ] Enhancement on UI/UX
+- [ ] Better documentation with languages : English,Myanmar
 
 ## Contribution
 I will make safe master brand.
