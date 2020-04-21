@@ -9,7 +9,10 @@
       "!**/node_modules/**",
       "!**/coverage/**",
       "!**/serviceWorker.ts",
-      "!**/store/index.ts"
+      "!**/store/index.ts",
+      "!**/index.tsx",
+      "module.d.ts",
+      "react-app-env.d.ts"
   ]
   },
   "dependencies": {
