@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 [![Tested with Jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest) [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
 
 [![Build Status](https://travis-ci.com/devayarhlaine/github-users-search.svg?branch=master)](https://travis-ci.com/devayarhlaine/github-users-search)
-[![Coverage Status](https://coveralls.io/repos/github/devayarhlaine/github-users-search/badge.svg)](https://coveralls.io/github/devayarhlaine/github-users-search)
+[![Coverage Status](https://coveralls.io/repos/github/devayarhlaine/github-users-search/badge.svg?service=github)](https://coveralls.io/github/devayarhlaine/github-users-search)
 
 
 ## Demo Link
