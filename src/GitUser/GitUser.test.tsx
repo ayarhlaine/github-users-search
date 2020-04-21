@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import SearchInput from './SearchInput/SearchInput';
 import UserResultList from './UserResultList/UserResultList';
-import { GitUser } from './GitUser';
+import ConnectedGitUser,{ GitUser } from './GitUser';
 describe('Git User', () => {
   let subject: ShallowWrapper;
   const defaultProp = {
