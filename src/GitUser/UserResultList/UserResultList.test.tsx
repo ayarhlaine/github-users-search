@@ -42,5 +42,19 @@ describe('User Result List', () => {
         expect(subject.find(UserDetail).prop('user')).toBe(expectedUser);
     });
   })
+
+  describe('When no user found',() =>{
+    beforeEach(() =>{
+      subject = shallow(<UserResultList users={[]}/>);
+    });
+    
+    it('should be div component',() =>{
+      expect(subject.type()).toBe('div');
+    });
+
+    it('should has No User Found! text',() =>{
+      expect(subject.text()).toEqual('No User Found!');
+    });
+  });
   
 });
