@@ -1,9 +1,9 @@
 import { updateSearchTextService } from './GitUserService';
-import { updateSearchText,updateUsers } from './GitUser.dux';
+import { updateSearchText,updateUsers } from './GitUser.dispatch';
 import { getGitUsers } from './getGitUser';
 import { getDispatchMock } from '../setupTests';
 jest.mock('./getGitUser');
-jest.mock('./GitUser.dux');
+jest.mock('./GitUser.dispatch');
 describe('Git Users Service', () => {
   const searchText = 'Search';
   let dispatchMock: jest.Mock;

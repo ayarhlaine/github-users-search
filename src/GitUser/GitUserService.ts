@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux';
-import { updateSearchText,updateUsers } from './GitUser.dux';
+import { updateSearchText,updateUsers } from './GitUser.dispatch';
 import { getGitUsers } from './getGitUser';
 export const updateSearchTextService = (searchText: string) =>
   async (dispatch: Dispatch) => {
