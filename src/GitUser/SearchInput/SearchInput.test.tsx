@@ -20,10 +20,6 @@ describe('SearchInput', () => {
     expect(subject.hasClass('SearchInput__Container')).toBe(true);
   });
 
-  it('should has Search text',() => {
-    expect(subject.text()).toEqual('Search: ')
-  });
-
   describe('Input Element',() =>{
     it('should has input element',() =>{
         expect(subject.find('input').length).toBe(1);
