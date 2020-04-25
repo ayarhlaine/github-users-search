@@ -1,4 +1,5 @@
 import React,{FC} from 'react';
+import './SearchInput.css';
 interface SearchInputProp{
     searchText: string,
     onSearchInputChange: (searchText: string) => void,
@@ -6,7 +7,7 @@ interface SearchInputProp{
 export const SearchInput: FC<SearchInputProp> = ({searchText,onSearchInputChange}) => {
   return (
     <div className="SearchInput__Container">
-      Search: <input type="text" value={searchText} onChange={(event: React.ChangeEvent<HTMLInputElement>) => onSearchInputChange(event.target.value as string)}/>
+      <input className={'SearchInput'} type="text" placeholder={' Type github user name'} value={searchText} onChange={(event: React.ChangeEvent<HTMLInputElement>) => onSearchInputChange(event.target.value as string)}/>
     </div>
   );
 }

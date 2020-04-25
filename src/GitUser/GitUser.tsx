@@ -7,16 +7,19 @@ import UserResultList from './UserResultList/UserResultList';
 import { GitUsers } from './GitUser.dux';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import AppHeader from './AppHeader/AppHeader';
+import SocialLink from './SocialLink/SocialLink';
 interface GitUserProp {
   searchText: string,
   users: Array<GitUsers>,
+  noOfApiCall: number,
   actions: {
     updateSearchTextService: typeof updateSearchTextService
     callGitAPIService: typeof callGitAPIService
   }
 }
 type GitUserPropNULL = GitUserProp | null;
-export const GitUser: FC<GitUserPropNULL> = ({ searchText, users, actions }) => {
+export const GitUser: FC<GitUserPropNULL> = ({ searchText, users, noOfApiCall, actions }) => {
   const [input$] = useState(() => new Subject<string>());
   useEffect(() => {
     const subscription = input$.pipe(
@@ -31,12 +34,14 @@ export const GitUser: FC<GitUserPropNULL> = ({ searchText, users, actions }) => 
     input$.next(searchText);
   }
   return (
-    <div className="Git__User__Container">
+    <div className="Git__User__Container" style={{padding: '1rem'}}>
+      <AppHeader />
       <SearchInput
         searchText={searchText}
         onSearchInputChange={onInputChange}
       />
-      <UserResultList users={users} />
+      <UserResultList users={users} noOfApiCall={noOfApiCall}/>
+      <SocialLink/>
     </div>
   );
 }
@@ -45,8 +50,8 @@ export const mapStateToProps = ({
 }: {
     git_user: GitUserProp;
   }) => {
-  const { searchText, users } = git_user;
-  return { searchText, users }
+  const { searchText, users, noOfApiCall } = git_user;
+  return { searchText, users, noOfApiCall }
 };
 export const mapDispatchToProps = (dispatch: Dispatch) => ({
   actions: {
