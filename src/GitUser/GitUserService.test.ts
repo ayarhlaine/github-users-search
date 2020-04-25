@@ -24,8 +24,4 @@ describe('Git Users Service', () => {
   it('should call updateSearchText',() =>{
     expect(updateSearchText).toHaveBeenCalledWith(dispatchMock,searchText);
   });
-
-  it('should call updateUsers',() =>{
-    expect(updateUsers).toHaveBeenCalledWith(dispatchMock,git_users);
-  });
 });
