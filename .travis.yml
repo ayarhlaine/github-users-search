@@ -4,15 +4,23 @@ node_js:
 cache:
   directories:
   - node_modules
-script:
-  - npm test
-  - npm run test:coveralls
-  - npm run build
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $github_token
-  local_dir: build
-  on:
-    branch: master
+jobs:
+  include:
+    - stage: "Testing"
+      script: 
+        - npm test
+    - stage: "Generate Testing Report"
+      script: 
+        - npm run test:coveralls
+    - stage: "Building App"
+      script: 
+        - npm run build
+    - stage: "Deploy App to Github Pages"
+        deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $github_token
+        local_dir: build
+        on:
+          branch: master
+      
