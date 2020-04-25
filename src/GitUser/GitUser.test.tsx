@@ -49,10 +49,6 @@ describe('Git User', () => {
     it('should has searchText prop',() =>{
         expect(subject.childAt(1).prop('searchText')).toBe(defaultProp.searchText);
     });
-
-    it('should has onSearchInputChange prop',() =>{
-        expect(subject.childAt(1).prop('onSearchInputChange')).toBe(defaultProp.actions.updateSearchTextService);
-    });
   });
 
   describe('UserResultList component',() =>{
