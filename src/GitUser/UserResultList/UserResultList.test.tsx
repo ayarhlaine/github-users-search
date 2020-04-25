@@ -5,6 +5,7 @@ import UserDetail from '../UserDetail/UserDetail';
 describe('User Result List', () => {
   let subject: ShallowWrapper;
   const defaultProp = {
+    noOfApiCall: 2,
     users: [ 
         {
         login: 'Test Login',
@@ -32,7 +33,7 @@ describe('User Result List', () => {
     });
 
     it('should User Result text',() => {
-        expect(subject.childAt(0).text()).toBe('User Results : ');
+        expect(subject.childAt(0).text()).toBe(`User Results : (called api ${defaultProp.noOfApiCall} times)`);
     });
   });
 
@@ -45,15 +46,19 @@ describe('User Result List', () => {
 
   describe('When no user found',() =>{
     beforeEach(() =>{
-      subject = shallow(<UserResultList users={[]}/>);
+      subject = shallow(<UserResultList {...defaultProp} users={[]}/>);
     });
     
     it('should be div component',() =>{
       expect(subject.type()).toBe('div');
     });
 
-    it('should has No User Found! text',() =>{
-      expect(subject.text()).toEqual('No User Found!');
+    it('should has User Result text',() =>{
+      expect(subject.childAt(0).text()).toBe(`User Results : (called api ${defaultProp.noOfApiCall} times)`);
+    });
+
+    it('should has No Users! text',() =>{
+      expect(subject.childAt(1).text()).toEqual('No Users!');
     });
   });
   
