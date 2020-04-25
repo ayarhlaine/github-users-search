@@ -16,11 +16,11 @@ jobs:
       script: 
         - npm run build
     - stage: "Deploy App to Github Pages"
-        deploy:
-          provider: pages
-          skip_cleanup: true
-          github_token: $github_token
-          local_dir: build
-          on:
-            branch: master
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $github_token
+        local_dir: build
+        on:
+          branch: master
       
