@@ -28,7 +28,7 @@ export const GitUser: FC<GitUserPropNULL> = ({ searchText, users, noOfApiCall, a
     return () => {
       subscription.unsubscribe();
     };
-  }, []);
+  }, [input$,actions]);
   const onInputChange = (searchText: string) => {
     actions.updateSearchTextService(searchText);
     input$.next(searchText);
