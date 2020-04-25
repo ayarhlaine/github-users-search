@@ -13,7 +13,7 @@
       "!**/index.tsx",
       "module.d.ts",
       "react-app-env.d.ts"
-  ]
+    ]
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -36,6 +36,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
+    "rxjs": "^6.5.5",
     "typesafe-actions": "^5.1.0",
     "typescript": "~3.7.2"
   },
