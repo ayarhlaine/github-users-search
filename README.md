@@ -49,7 +49,7 @@ Getting API Data :
 
 I use Travis CI (Continuous Integration/Continuous Deployment) to deploy our site automatically to github pages.
 
-![CI/CD Report](/docs/images/ci-cd.jpg)
+![CI/CD Report](/docs/images/ci-cd-report.jpg)
 
 [Checking travis ci config file (.yml)?](http://www.yamllint.com/)
 
