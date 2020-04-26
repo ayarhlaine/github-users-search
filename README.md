@@ -49,15 +49,18 @@ Getting API Data :
 
 I use Travis CI (Continuous Integration/Continuous Deployment) to deploy our site automatically to github pages.
 
+![CI/CD Report](/docs/images/ci-cd.jpg)
+
+[Checking travis ci config file (.yml)?](http://www.yamllint.com/)
+
 ## Debounce Time Reference Questions
 - [How to use rxjs debounce time on react input](https://stackoverflow.com/questions/44299632/rxjs-debounce-on-react-text-input-component)
 - [How to use subject with react hooks](https://stackoverflow.com/questions/57631094/using-react-useeffect-hook-with-rxjs-mergemap-operator)
 
 ## Current To Do List
-- [x] Complete unit test coverage up to 90 %
-- [ ] Call github search api only when user complete typing ( Prefer to use rxjs debouncetime )
-- [ ] Enhancement on UI/UX
-- [ ] Better documentation with languages : English,Myanmar
+- [ ] Complete unit test coverage up to 90 %
+- [x] Call github search api only when user complete typing ( Prefer to use rxjs debouncetime )
+- [x] Enhancement on UI/UX
 
 ## Contribution
 I will make safe master brand.
