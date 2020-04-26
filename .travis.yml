@@ -16,6 +16,7 @@ jobs:
       script: 
         - npm run build
     - stage: "Deploy App to Github Pages"
+      before_deploy: npm run build
       deploy:
         provider: pages
         skip_cleanup: true
