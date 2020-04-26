@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { updateSearchTextService,callGitAPIService } from './GitUserService';
@@ -6,9 +6,9 @@ import SearchInput from './SearchInput/SearchInput';
 import UserResultList from './UserResultList/UserResultList';
 import { GitUsers } from './GitUser.dux';
 import { Subject } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
 import AppHeader from './AppHeader/AppHeader';
 import SocialLink from './SocialLink/SocialLink';
+import {useSubject} from './useSubject';
 interface GitUserProp {
   searchText: string,
   users: Array<GitUsers>,
@@ -19,19 +19,12 @@ interface GitUserProp {
   }
 }
 type GitUserPropNULL = GitUserProp | null;
+const subject = new Subject<string>();
 export const GitUser: FC<GitUserPropNULL> = ({ searchText, users, noOfApiCall, actions }) => {
-  const [input$] = useState(() => new Subject<string>());
-  useEffect(() => {
-    const subscription = input$.pipe(
-      debounceTime(1000)
-    ).subscribe((newValue: string) => actions.callGitAPIService(newValue));
-    return () => {
-      subscription.unsubscribe();
-    };
-  }, [input$,actions]);
+  useSubject(subject,actions.callGitAPIService);
   const onInputChange = (searchText: string) => {
     actions.updateSearchTextService(searchText);
-    input$.next(searchText);
+    subject.next(searchText);
   }
   return (
     <div className="Git__User__Container" style={{padding: '1rem'}}>
