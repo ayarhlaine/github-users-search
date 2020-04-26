@@ -12,10 +12,7 @@ jobs:
     - stage: "Generate Testing Report"
       script: 
         - npm run test:coveralls
-    - stage: "Building App"
-      script: 
-        - npm run build
-    - stage: "Deploy App to Github Pages"
+    - stage: "Build & Deploy to Github Pages"
       before_deploy: npm run build
       deploy:
         provider: pages
