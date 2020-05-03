@@ -1,12 +1,24 @@
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { useEffect } from 'react';
-import { callGitAPIService } from './GitUserService';
-export const useSubject = (subject: Subject<string>,callAction: typeof callGitAPIService) => {
+import { callGitAPIService,updateUserActionService } from './GitUserService';
+export const useSubject = (inputSubject$ :Subject<string>,callAction: typeof callGitAPIService,updateUserAction: typeof updateUserActionService) => {
+    let dataSubscription$: Subscription;
+    let typingSubscription$: Subscription;
+    
     useEffect(() => {
-        const subscription = subject.pipe(
+        // eslint-disable-next-line
+        dataSubscription$ = inputSubject$.pipe(
             debounceTime(1000)
-        ).subscribe((newSearchText: string) => callAction(newSearchText));
-        return () => subscription.unsubscribe();
-    }, [subject,callAction]);
+        ).subscribe((newSearchText: string) => {
+            updateUserAction('Getting Data from Github ...')
+            callAction(newSearchText);
+        });
+        // eslint-disable-next-line
+        typingSubscription$ = inputSubject$.subscribe((newSearchText: string) => updateUserAction('Typing ...'));
+        return () => { 
+            dataSubscription$.unsubscribe();
+            typingSubscription$.unsubscribe();
+        };
+    }, [inputSubject$,callAction]);
 }

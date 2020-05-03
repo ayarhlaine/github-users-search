@@ -1,5 +1,6 @@
 import { Dispatch } from 'redux';
-import { updateSearchText,updateUsers,updateNoOfApiCall } from './GitUser.dispatch';
+import { DateTime } from 'luxon';
+import { updateSearchText,updateUsers,updateNoOfApiCall,userActionCall } from './GitUser.dispatch';
 import { AppState } from '../store';
 import { getGitUsers } from './getGitUser';
 export const updateSearchTextService = (searchText: string) =>
@@ -13,4 +14,10 @@ export const callGitAPIService = (searchText: string) =>
     const git_users = await getGitUsers(searchText);
     updateUsers(dispatch,git_users);
     updateNoOfApiCall(dispatch,noOfApiCall+1);
+    const currentTime = DateTime.local().toLocaleString(DateTime.DATETIME_SHORT);
+    userActionCall(dispatch,`Last data received at ${currentTime}`);
+};
+export const updateUserActionService = (userAction: string) =>
+  async (dispatch: Dispatch) => {
+    userActionCall(dispatch,userAction);
 };
