@@ -2,13 +2,15 @@ import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import AppHeader from './AppHeader/AppHeader';
 import SearchInput from './SearchInput/SearchInput';
+import UserAction from './UserAction/UserAction';
 import UserResultList from './UserResultList/UserResultList';
-import ConnectedGitUser,{ GitUser } from './GitUser';
+import { GitUser } from './GitUser';
 describe('Git User', () => {
   let subject: ShallowWrapper;
   const defaultProp = {
     searchText: 'Example SearchText',
     noOfApiCall: 0,
+    userAction: 'User Action',
     users: [
         {
             login: 'Example Login',
@@ -20,6 +22,7 @@ describe('Git User', () => {
     actions: {
         updateSearchTextService: jest.fn(),
         callGitAPIService: jest.fn(),
+        updateUserActionService: jest.fn()
     }
   };
 
@@ -50,14 +53,23 @@ describe('Git User', () => {
         expect(subject.childAt(1).prop('searchText')).toBe(defaultProp.searchText);
     });
   });
+  describe('UserAction component',() =>{
+    it('should has UserAction',() =>{
+      expect(subject.childAt(2).type()).toBe(UserAction);
+    });
+
+    it('should has userAction prop',() =>{
+        expect(subject.childAt(2).prop('userAction')).toBe(defaultProp.userAction);
+    });
+  });
 
   describe('UserResultList component',() =>{
     it('should has UserResultList',() =>{
-        expect(subject.childAt(2).type()).toBe(UserResultList);
+        expect(subject.childAt(3).type()).toBe(UserResultList);
     });
 
     it('should has users prop',() =>{
-        expect(subject.childAt(2).prop('users')).toBe(defaultProp.users);
+        expect(subject.childAt(3).prop('users')).toBe(defaultProp.users);
     });
   });
 
