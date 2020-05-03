@@ -26,7 +26,7 @@ export const gitUserReducer = createReducer(initialState)
     ({ ...state, searchText: action.payload }))
   .handleAction('GIT_USER/UPDATE_USERS', (state: GitUserProp, action:any) =>
     ({ ...state, users: action.payload }))
-  .handleAction('GIT_USER/UPDATE_NO_OF_API_CAL', (state: GitUserProp, action:any) =>
+  .handleAction('GIT_USER/UPDATE_NO_OF_API_CALL', (state: GitUserProp, action:any) =>
     ({ ...state, noOfApiCall: action.payload }))
   .handleAction('GIT_USER/UPDATE_USER_ACTION', (state: GitUserProp, action:any) =>
     ({ ...state, userAction: action.payload }))
