@@ -5,9 +5,7 @@ interface UserActionProp {
 }
 export const UserAction: FC<UserActionProp> = ({userAction}) => {
   return (
-    <div className="UserAction__Container">
-        <p className={'UserAction__Text'}>{userAction}</p>
-    </div>
+    <p className={'UserAction__Text'}>{userAction}</p>
   );
 }
 export default UserAction;
